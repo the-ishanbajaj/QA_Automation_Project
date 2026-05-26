@@ -1,5 +1,5 @@
 # QA_Playwright_project 
-This is a showcase project built to demonstrate automation testing functionalities using Python, Selenium, and PyTest. The project is based on SauceDemo, a demo website designed for practicing and learning test automation workflows. It includes basic UI and API testing concepts along with report generation and reusable framework structuree.
+This is a showcase project built to demonstrate automation testing functionalities using Python, Playwright , and PyTest. The project is based on SauceDemo, a demo website designed for practicing and learning test automation workflows. It includes basic UI and API testing concepts along with report generation and reusable framework structuree.
 
 ## Tech Stack
 - Python 3.11
