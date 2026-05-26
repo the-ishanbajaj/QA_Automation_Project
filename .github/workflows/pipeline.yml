@@ -1,6 +1,5 @@
 name: Enterprise SDET Pipeline
 
-# Trigger this workflow every time code is pushed to the main branch
 on:
   push:
     branches: [ "main", "master" ]
@@ -10,27 +9,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Grab the code from the repository
+    #  retrive the code from the repository
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    # 2. Install Python
+    # Install Python
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
-    # 3. Install our exact tech stack
+    # installing technical requirements 
     - name: Install Dependencies
       run: |
         pip3 install pytest pytest-playwright pytest-html pytest-xdist requests
         playwright install chromium
 
-    # 4. Run the framework in parallel and generate the report
     - name: Execute Tests
       run: pytest -n 3 --html=report.html --self-contained-html
 
-    # 5. Save the HTML report so we can download it later
     - name: Upload HTML Report
       if: always()
       uses: actions/upload-artifact@v4
